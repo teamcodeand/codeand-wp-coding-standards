@@ -1,0 +1,28 @@
+{
+  "name": "teamcodeand/codeand-wp-coding-standards",
+  "type": "phpcodesniffer-standard",
+  "description": "PHP_CodeSniffer rules for Code& WordPress projects",
+  "homepage": "https://github.com/teamcodeand/codeand-wp-coding-standards/",
+  "authors": [
+    {
+      "name": "Code& Pty Ltd",
+      "email": "team@codeand.com.au",
+      "homepage": "https://www.codeand.com.au/",
+      "role": "Company"
+    },
+    {
+      "name": "Dale Grant",
+      "email": "dale@codeand.com.au",
+      "homepage": "https://www.codeand.com.au/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+	"wp-coding-standards/wpcs": "^2.2",
+	"dealerdirect/phpcodesniffer-composer-installer": "^0.6.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
+}
