@@ -50,7 +50,7 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <arg name="extensions" value="php"/>
 
     <!-- Install custom rulesets -->
-    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/codeand/codeand-wp-coding-standards"/>
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/teamcodeand/codeand-wp-coding-standards"/>
 
     <!-- Use Code& WP Coding Standards -->
     <rule ref="codeand"/>

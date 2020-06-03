@@ -68,9 +68,9 @@
     </rule>
 
 	<!-- Ban inline assignment in control structures (see note on Yoda Conditions above). -->
-  	<rule ref="PSR2R.ControlStructures.NoInlineAssignment" />
+  	<!-- <rule ref="PSR2R.ControlStructures.NoInlineAssignment" /> -->
 
     <!-- Namespace Use statements -->
-    <rule ref="PSR2R.Namespaces.UnusedUseStatement" />
-    <rule ref="PSR2R.Namespaces.UseInAlphabeticalOrder" />
+    <!-- <rule ref="PSR2R.Namespaces.UnusedUseStatement" /> -->
+    <!-- <rule ref="PSR2R.Namespaces.UseInAlphabeticalOrder" /> -->
 </ruleset>
