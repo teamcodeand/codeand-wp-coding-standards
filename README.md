@@ -52,22 +52,15 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <!-- Install custom rulesets -->
     <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/teamcodeand/codeand-wp-coding-standards"/>
 
-    <!-- Use Code& WP Coding Standards -->
-    <rule ref="codeand"/>
-
     <!-- TODO: Probably change everything below! -->
     <!-- TODO: Exclude specific rules if necessary -->
 
-    <!-- Bedrock: Exclude everything -->
-    <exclude-pattern>/web/app/languages/*</exclude-pattern>
-    <exclude-pattern>/web/app/mu-plugins/*</exclude-pattern>
-    <exclude-pattern>/web/app/plugins/*</exclude-pattern>
-    <exclude-pattern>/web/app/themes/*</exclude-pattern>
-    <exclude-pattern>/web/app/uploads/*</exclude-pattern>
-
-    <!-- But inspect custom stuffs -->
-    <include-pattern>/web/app/plugins/myplugin/*</include-pattern>
-    <include-pattern>/web/app/themes/childtheme/*</include-pattern>
+	<!-- Use Code& WP Coding Standards -->
+    <rule ref="codeand">
+		<!-- And only inspect custom stuffs -->
+		<include-pattern>/web/app/plugins/myplugin/*</include-pattern>
+    	<include-pattern>/web/app/themes/childtheme/*</include-pattern>
+	</rule>
 
     <!-- TODO: Define minimum supported WordPress version -->
     <config name="minimum_supported_wp_version" value="5.2"/>
