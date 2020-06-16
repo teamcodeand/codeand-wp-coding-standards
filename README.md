@@ -23,10 +23,10 @@ Add this repository to the `composer.json` for the WP project and add to `requir
       "type": "vcs",
       "url": "git@github.com:teamcodeand/codeand-wp-coding-standards.git",
       "no-api": true
-	}
+    }
 ],
 "require-dev": {
-	"teamcodeand/codeand-wp-coding-standards": "^0.1.0"
+    "teamcodeand/codeand-wp-coding-standards": "^0.1.0"
 }
 ```
 
@@ -55,12 +55,12 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <!-- TODO: Probably change everything below! -->
     <!-- TODO: Exclude specific rules if necessary -->
 
-	<!-- Use Code& WP Coding Standards -->
+    <!-- Use Code& WP Coding Standards -->
     <rule ref="codeand">
-		<!-- And only inspect custom stuffs -->
-		<include-pattern>/web/app/plugins/myplugin/*</include-pattern>
-    	<include-pattern>/web/app/themes/childtheme/*</include-pattern>
-	</rule>
+        <!-- And only inspect custom stuffs -->
+        <include-pattern>/web/app/plugins/myplugin/*</include-pattern>
+        <include-pattern>/web/app/themes/childtheme/*</include-pattern>
+    </rule>
 
     <!-- TODO: Define minimum supported WordPress version -->
     <config name="minimum_supported_wp_version" value="5.2"/>
@@ -82,8 +82,8 @@ Either define the project's [composer scripts](https://getcomposer.org/doc/artic
   "scripts": {
     "test": [
       "phpcs"
-	],
-	"fix": [
+    ],
+    "fix": [
       "phpcbf"
     ]
   }
