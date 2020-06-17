@@ -18,6 +18,9 @@
         <exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket" />
     </rule>
 
+	<!-- Disallow empty lines after opening function brace -->
+	<rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+
     <!-- Use [] over array() -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
