@@ -2,75 +2,78 @@
 <ruleset name="codeand">
     <description>Codeand WordPress Coding Standards</description>
 
-	<rule ref="PSR2">
-		<exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
+    <rule ref="PSR2">
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
-	</rule>
+    </rule>
 
     <rule ref="PSR12">
-		<!-- Use 1 space before and after braces & brackets -->
-		<exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace" />
-		<exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace" />
-		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket" />
-		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket" />
-	</rule>
+        <!-- Use 1 space before and after braces & brackets -->
+        <exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace" />
+        <exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace" />
+        <exclude name="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket" />
+        <exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket" />
+    </rule>
+
+    <!-- Use [] over array() -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
     <rule ref="WordPress">
+        <!-- Use [] over array() -->
         <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
-        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceAfterOpen"/>
-        <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing.SpaceBeforeClose"/>
 
-        <exclude name="PEAR.Functions.FunctionCallSignature"/>
+        <!-- Allow last item in array with or without comma -->
+        <exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma"/>
 
-        <exclude name="Squiz.Commenting.ClassComment.Missing"/>
-        <exclude name="Squiz.Commenting.FileComment.Missing"/>
+        <!-- Allow missing @package in DocComment-->
         <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
-        <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen"/>
-        <exclude name="Squiz.Commenting.FunctionComment.Missing"/>
-        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen"/>
 
-        <exclude name="WordPress.Arrays"/>
+        <!-- Prefer space after file comment -->
+        <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen"/>
+
+        <!-- Exclude WP naming conventions -->
         <exclude name="WordPress.Files.FileName"/>
         <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
         <exclude name="WordPress.NamingConventions.ValidHookName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
-        <!-- <exclude name="WordPress.PHP.DisallowShortTernary"/> -->
 
-		<!-- Allow with or without semicolons. -->
-		<exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
+        <!-- Allow PHP Short Ternary (??) -->
+        <exclude name="WordPress.PHP.DisallowShortTernary"/>
 
-		<!-- Exclude rules against brackets on new lines -->
-		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
-		<exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
+        <!-- Allow with or without semicolons. -->
+        <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
 
-		<!-- Allow new line after close bracket-->
-		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceAfterCloseParenthesis" />
+        <!-- Exclude rules against brackets on new lines -->
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
+        <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine" />
 
-		<!-- No to Yoda conditions. Yes to banning assignment in conditionals. -->
-		<exclude name="WordPress.PHP.YodaConditions" />
+        <!-- Allow new line after close bracket-->
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceAfterCloseParenthesis" />
 
-		<!-- Use spaces over tabs -->
-		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+        <!-- No to Yoda conditions. Yes to banning assignment in conditionals. -->
+        <exclude name="WordPress.PHP.YodaConditions" />
 
-		<!-- Use CamelCaps method names over snake case -->
-		<exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" />
+        <!-- Use spaces over tabs -->
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
 
-		<!-- Prefer alignment over line length -->
-		<exclude name="Generic.Files.LineLength.TooLong" />
+        <!-- Use CamelCaps method names over snake case -->
+        <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" />
+
+        <!-- Prefer alignment over line length -->
+        <exclude name="Generic.Files.LineLength.TooLong" />
     </rule>
 
-	<!-- Prefer alignment over line length. -->
+    <!-- Prefer alignment over line length. -->
     <rule ref="WordPress.Arrays.MultipleStatementAlignment">
         <properties>
             <property name="maxColumn" value="1000" />
         </properties>
     </rule>
 
-	<!-- Ban inline assignment in control structures (see note on Yoda Conditions above). -->
-  	<!-- <rule ref="PSR2R.ControlStructures.NoInlineAssignment" /> -->
+    <!-- Ban inline assignment in control structures (see note on Yoda Conditions above). -->
+    <rule ref="PSR2R.ControlStructures.NoInlineAssignment" />
 
     <!-- Namespace Use statements -->
-    <!-- <rule ref="PSR2R.Namespaces.UnusedUseStatement" /> -->
-    <!-- <rule ref="PSR2R.Namespaces.UseInAlphabeticalOrder" /> -->
+    <rule ref="PSR2R.Namespaces.UnusedUseStatement" />
+    <rule ref="PSR2R.Namespaces.UseInAlphabeticalOrder" />
 </ruleset>
