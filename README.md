@@ -26,7 +26,7 @@ Add this repository to the `composer.json` for the WP project and add to `requir
     }
 ],
 "require-dev": {
-    "teamcodeand/codeand-wp-coding-standards": "^0.1.0"
+    "teamcodeand/codeand-wp-coding-standards": "dev-master"
 }
 ```
 
@@ -50,7 +50,7 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <arg name="extensions" value="php"/>
 
     <!-- Install custom rulesets -->
-    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/teamcodeand/codeand-wp-coding-standards"/>
+    <config name="installed_paths" value="vendor/teamcodeand/codeand-wp-coding-standards"/>
 
     <!-- TODO: Probably change everything below! -->
     <!-- TODO: Exclude specific rules if necessary -->
