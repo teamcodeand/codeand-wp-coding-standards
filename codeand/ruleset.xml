@@ -6,6 +6,8 @@
     <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/fig-r/psr2r-sniffer"/>
 
     <rule ref="PSR2">
+        <!-- Allow snake_case, as that's what WP uses -->
+        <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
     </rule>
@@ -39,9 +41,11 @@
 
         <!-- Exclude WP naming conventions -->
         <exclude name="WordPress.Files.FileName"/>
-        <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+        <!-- Use camelCaps method names over snake_case -->
+        <!-- <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
         <exclude name="WordPress.NamingConventions.ValidHookName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+        <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" />-->
 
         <!-- Allow PHP Short Ternary (??) -->
         <exclude name="WordPress.PHP.DisallowShortTernary"/>
@@ -61,9 +65,6 @@
 
         <!-- Use spaces over tabs -->
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-
-        <!-- Use CamelCaps method names over snake case -->
-        <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" />
 
         <!-- Prefer alignment over line length -->
         <exclude name="Generic.Files.LineLength.TooLong" />
