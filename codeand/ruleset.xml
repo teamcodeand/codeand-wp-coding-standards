@@ -3,7 +3,7 @@
     <description>Codeand WordPress Coding Standards</description>
 
 	<!-- Install rulesets -->
-    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/fig-r/psr2r-sniffer"/>
+    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/fig-r/psr2r-sniffer/PSR2R,../../slevomat/coding-standard,../../spryker/code-sniffer"/>
 
     <rule ref="PSR2">
         <!-- Allow snake_case, as that's what WP uses -->
@@ -82,5 +82,5 @@
 
     <!-- Namespace Use statements -->
     <rule ref="PSR2R.Namespaces.UnusedUseStatement" />
-    <rule ref="PSR2R.Namespaces.UseInAlphabeticalOrder" />
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
 </ruleset>
