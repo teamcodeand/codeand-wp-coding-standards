@@ -20,7 +20,7 @@
   "require": {
     "php": "^7.2",
     "wp-coding-standards/wpcs": "^2.3",
-    "fig-r/psr2r-sniffer": "^1.0.1",
+    "fig-r/psr2r-sniffer": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
   },
   "require-dev": {
