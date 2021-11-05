@@ -8,6 +8,7 @@
     <rule ref="PSR2">
         <!-- Allow snake_case, as that's what WP uses -->
         <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
+        <!-- Use 1 space before and after braces & brackets -->
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
     </rule>
@@ -41,11 +42,11 @@
 
         <!-- Exclude WP naming conventions -->
         <exclude name="WordPress.Files.FileName"/>
-        <!-- Use camelCaps method names over snake_case -->
-        <!-- <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+        <!-- We're OK with camelCaps or snake_case -->
+        <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
         <exclude name="WordPress.NamingConventions.ValidHookName"/>
         <exclude name="WordPress.NamingConventions.ValidVariableName"/>
-        <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" />-->
+        <!-- <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" /> -->
 
         <!-- Allow PHP Short Ternary (??) -->
         <exclude name="WordPress.PHP.DisallowShortTernary"/>
