@@ -18,12 +18,17 @@
     }
   ],
   "require": {
-    "php": "^7.2",
+    "php": "^7.2 || ^8.0",
     "wp-coding-standards/wpcs": "^2.3",
     "fig-r/psr2r-sniffer": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
