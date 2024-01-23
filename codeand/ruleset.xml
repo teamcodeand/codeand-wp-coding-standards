@@ -2,8 +2,6 @@
 <ruleset name="codeand">
     <description>Codeand WordPress Coding Standards</description>
 
-	<!-- Install rulesets -->
-    <config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/fig-r/psr2r-sniffer/PSR2R,../../slevomat/coding-standard,../../spryker/code-sniffer"/>
 
     <rule ref="PSR2">
         <!-- Allow snake_case, as that's what WP uses -->
@@ -29,10 +27,11 @@
 
     <rule ref="WordPress">
         <!-- Use [] over array() -->
-        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
 
         <!-- Allow last item in array with or without comma -->
-        <exclude name="WordPress.Arrays.CommaAfterArrayItem.NoComma"/>
+        <exclude name="NormalizedArrays.Arrays.CommaAfterLast"/>
+        <exclude name="Universal.WhiteSpace.CommaSpacing"/>
 
         <!-- Allow missing @package in DocComment-->
         <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
@@ -49,7 +48,7 @@
         <!-- <exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid" /> -->
 
         <!-- Allow PHP Short Ternary (??) -->
-        <exclude name="WordPress.PHP.DisallowShortTernary"/>
+        <exclude name="Universal.Operators.DisallowShortTernary"/>
 
         <!-- Allow with or without semicolons. -->
         <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
