@@ -5,6 +5,6 @@
 /* export-ignore
 
 # Export white-listed production code only.
-/codeand          -export-ignore
+/codeand        -export-ignore
 /composer.*     -export-ignore
 /README.md      -export-ignore
