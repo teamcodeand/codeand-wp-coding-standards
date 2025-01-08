@@ -89,6 +89,6 @@
     <rule ref="PSR2R.ControlStructures.NoInlineAssignment" />
 
     <!-- Namespace Use statements -->
-    <rule ref="PSR2R.Namespaces.UnusedUseStatement" />
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
 </ruleset>
