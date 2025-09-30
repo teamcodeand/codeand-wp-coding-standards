@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": "^7.2 || ^8.0",
-    "fig-r/psr2r-sniffer": "dev-master",
+    "fig-r/psr2r-sniffer": "^2.3.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1.4",
     "sirbrillig/phpcs-variable-analysis": "^2.11",
     "wp-coding-standards/wpcs": "^3.0.1"
