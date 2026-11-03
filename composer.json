@@ -18,18 +18,22 @@
     }
   ],
   "require": {
-    "php": "^7.2 || ^8.0",
+    "php": ">=8.2",
     "fig-r/psr2r-sniffer": "^2.3.0",
     "phpcompatibility/phpcompatibility-wp": "^2.1.4",
     "sirbrillig/phpcs-variable-analysis": "^2.11",
     "wp-coding-standards/wpcs": "^3.0.1"
   },
   "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
     "roave/security-advisories": "dev-master"
   },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
+  },
+  "scripts": {
+    "test": "@php tests/run.php"
   }
 }

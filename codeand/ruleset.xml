@@ -4,22 +4,16 @@
 
     <!-- Test for PHP compat. -->
     <config name="testVersion" value="8.2-"/>
-    <rule ref="PHPCompatibilityWP">
-        <include-pattern>*\.php$</include-pattern>
-    </rule>
+    <rule ref="PHPCompatibilityWP"/>
 
     <!-- Analysis of problematic variable use. -->
     <rule ref="VariableAnalysis"/>
 
-    <rule ref="PSR2">
+    <rule ref="PSR12">
+        <!-- Allow both PascalCase and WordPress-style class names with underscores. -->
+        <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps"/>
         <!-- Allow snake_case, as that's what WP uses -->
         <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/>
-        <!-- Use 1 space before and after braces & brackets -->
-        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
-        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace"/>
-    </rule>
-
-    <rule ref="PSR12">
         <!-- Use 1 space before and after braces & brackets -->
         <exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace" />
         <exclude name="PSR12.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace" />
@@ -34,6 +28,15 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
 
     <rule ref="WordPress">
+        <!-- Squiz checks these spaces, including cases not covered by WordPress. -->
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterStructureOpen"/>
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeOpenParenthesis"/>
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.ExtraSpaceBeforeOpenParenthesis"/>
+        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterCloseParenthesis"/>
+
+        <!-- VariableAnalysis already checks unused parameters; avoid duplicate warnings. -->
+        <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
         <!-- Use [] over array() -->
         <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found"/>
 
@@ -89,6 +92,7 @@
     <rule ref="PSR2R.ControlStructures.NoInlineAssignment" />
 
     <!-- Namespace Use statements -->
+    <rule ref="PSR2.Namespaces.UseDeclaration" />
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses" />
 </ruleset>
