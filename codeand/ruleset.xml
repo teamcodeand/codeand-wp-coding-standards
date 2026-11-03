@@ -4,9 +4,7 @@
 
     <!-- Test for PHP compat. -->
     <config name="testVersion" value="8.2-"/>
-    <rule ref="PHPCompatibilityWP">
-        <include-pattern>*\.php$</include-pattern>
-    </rule>
+    <rule ref="PHPCompatibilityWP"/>
 
     <!-- Analysis of problematic variable use. -->
     <rule ref="VariableAnalysis"/>
