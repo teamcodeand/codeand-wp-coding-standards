@@ -14,21 +14,32 @@ Whenever there's a conflict between PSR and WPCS, we almost always prefer PSR.
 
 ## Installation
 
-Add this repository to the `composer.json` for the WP project and add to `require-dev`:
+Merge this repository and plugin permission into the WordPress project's `composer.json`, preserving its existing entries:
 
 ```json
-# composer.json
-"repositories": [
+{
+  "repositories": [
     {
       "type": "vcs",
       "url": "git@github.com:teamcodeand/codeand-wp-coding-standards.git",
       "no-api": true
     }
-],
-"require-dev": {
-    "teamcodeand/codeand-wp-coding-standards": "dev-master"
+  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
 ```
+
+From the project root, install the standard and the plugin that registers its rules with PHP_CodeSniffer:
+
+```sh
+composer require --dev teamcodeand/codeand-wp-coding-standards:dev-main dealerdirect/phpcodesniffer-composer-installer:^1.2
+```
+
+Verify registration with `vendor/bin/phpcs -i`. The list should include `codeand`, `WordPress`, `PHPCompatibilityWP`, `VariableAnalysis`, `PSR2R` and `SlevomatCodingStandard`. Let the Composer plugin manage `installed_paths`; setting it to only the Code& directory hides the other required standards.
 
 ## Setup
 
@@ -49,8 +60,7 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <!-- Scan only PHP files -->
     <arg name="extensions" value="php"/>
 
-    <!-- Install custom rulesets -->
-    <config name="installed_paths" value="vendor/teamcodeand/codeand-wp-coding-standards"/>
+    <exclude-pattern>vendor/</exclude-pattern>
 
     <!-- TODO: Probably change everything below! -->
     <!-- TODO: Exclude specific rules if necessary -->
@@ -68,16 +78,25 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
     <!-- TODO: Define expected text domains -->
     <rule ref="WordPress.WP.I18n">
         <properties>
-            <property name="text_domain" type="array" value="my-plugin,my-theme,woocommerce,sage"/>
+            <property name="text_domain" type="array">
+                <element value="my-plugin"/>
+                <element value="my-theme"/>
+                <element value="woocommerce"/>
+                <element value="sage"/>
+            </property>
         </properties>
     </rule>
 </ruleset>
 ```
+
+For Bedrock, adjust the include patterns to cover the project's own plugins, themes and MU plugins. The `<file>` entries determine which paths PHPCS searches; the include patterns determine where the rules apply.
+
+For a standalone plugin, use `<file>./</file>` and `<rule ref="codeand"/>` instead of the Bedrock file entry and scoped `codeand` rule above. Keep the `vendor/` exclusion and set the plugin's WordPress minimum and text domain.
+
 ## Usage
 Either define the project's [composer scripts](https://getcomposer.org/doc/articles/scripts.md):
 
 ```json
-# composer.json
 {
   "scripts": {
     "test": [
