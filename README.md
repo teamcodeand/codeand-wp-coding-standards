@@ -9,7 +9,7 @@
 
 Code& Coding Standards is a project with rulesets for code style and quality tools to be used in Code& WordPress projects.
 
-It is a mix with [PSR-1](https://www.php-fig.org/psr/psr-1/), [PSR-2](https://www.php-fig.org/psr/psr-2), [PSR-4](https://www.php-fig.org/psr/psr-4/), [PSR-12](https://www.php-fig.org/psr/psr-12/) and [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards).
+It combines [PSR-12](https://www.php-fig.org/psr/psr-12/) with [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) and additional checks. Imports require separate `use` statements. Class names may use PascalCase or capitalized words separated by underscores.
 
 Whenever there's a conflict between PSR and WPCS, we almost always prefer PSR.
 
@@ -93,6 +93,8 @@ First, create [`phpcs.xml`](https://github.com/squizlabs/PHP_CodeSniffer/wiki/An
 ```
 
 For Bedrock, adjust the include patterns to cover the project's own plugins, themes and MU plugins. The `<file>` entries determine which paths PHPCS searches; the include patterns determine where the rules apply.
+
+If a project adds a separate scoped `PHPCompatibilityWP` rule, declare it before `codeand` and list every path that needs compatibility checking, including the custom-code paths. PHPCS applies these include patterns when the checks are first imported; adding another scoped import later does not extend their coverage.
 
 For a standalone plugin, use `<file>./</file>` and `<rule ref="codeand"/>` instead of the Bedrock file entry and scoped `codeand` rule above. Keep the `vendor/` exclusion and set the plugin's WordPress minimum and text domain.
 
