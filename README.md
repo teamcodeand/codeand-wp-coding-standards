@@ -14,6 +14,8 @@ Whenever there's a conflict between PSR and WPCS, we almost always prefer PSR.
 
 ## Installation
 
+PHP 8.2 or later is required to install and run these coding standards.
+
 Merge this repository and plugin permission into the WordPress project's `composer.json`, preserving its existing entries:
 
 ```json
