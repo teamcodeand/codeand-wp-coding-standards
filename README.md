@@ -4,6 +4,7 @@
 - [Setup](#setup)
 - [Usage](#usage)
   - [Use in an IDE](#use-within-your-IDE)
+- [Developing this standard](#developing-this-standard)
 - [Credits](#credits)
 
 Code& Coding Standards is a project with rulesets for code style and quality tools to be used in Code& WordPress projects.
@@ -120,6 +121,10 @@ $ composer fix
 
 ### Use within your IDE
 Or alternatively, set this up in your IDE to check your code as you're working on it. You'll probably find a guide for how to do that in the WPCS Readme under [Using PHPCS and WPCS from within your IDE](https://github.com/WordPress/WordPress-Coding-Standards#using-phpcs-and-wpcs-from-within-your-ide)
+
+## Developing this standard
+
+From a checkout of this repository, run `composer install` followed by `composer test` using PHP 8.2 or later. The regression checks cover naming, imports, variable analysis, spacing and project file scope. GitHub Actions runs them on PHP 8.2 for non-draft pull requests targeting `develop`, `master` or `main`, and for pushes to `main`. Draft PRs are skipped; marking a PR ready for review triggers the checks.
 
 ## Credits
 

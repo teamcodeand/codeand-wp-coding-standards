@@ -25,11 +25,15 @@
     "wp-coding-standards/wpcs": "^3.0.1"
   },
   "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
     "roave/security-advisories": "dev-master"
   },
   "config": {
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
     }
+  },
+  "scripts": {
+    "test": "@php tests/run.php"
   }
 }

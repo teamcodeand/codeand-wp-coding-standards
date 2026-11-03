@@ -1,0 +1,28 @@
+name: Coding standards checks
+
+on:
+  pull_request:
+    branches: [develop, master, main]
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regression:
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+      - run: composer validate --no-check-publish
+      - run: composer install --prefer-dist --no-interaction --no-progress
+      - run: composer test
